@@ -1,1 +1,12 @@
-
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.lechateaublanc.app",
+      "sha256_cert_fingerprints": [
+        "91:27:57:F6:B1:5C:58:65:92:44:2E:CE:9C:CF:DD:EF:A0:8A:B3:42:22:4C:48:6E:68:F9:44:5B:11:05:0F:23"
+      ]
+    }
+  }
+]
