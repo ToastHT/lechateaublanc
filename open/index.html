@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Open LeChateauBlanc App</title>
+    <meta charset="UTF-8">
+    <title>Launching App...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript">
-      function openApp() {
+      window.onload = function () {
+        // Try to open the app
         window.location = "lechateaublanc://open";
+
+        // After 2 seconds, fallback to Play Store if not installed
         setTimeout(function () {
-          // fallback in case app not installed
-          window.location = "https://play.google.com/store/apps/details?id=com.lechateaublanc.app";
+          window.location.href = "https://play.google.com/store/apps/details?id=com.lechateaublanc.app";
         }, 2000);
-      }
+      };
     </script>
   </head>
-  <body onload="openApp()" style="font-family:sans-serif; text-align:center; padding-top:100px;">
+  <body style="text-align: center; font-family: sans-serif; padding-top: 100px;">
     <h1>Welcome to LeChateauBlanc!</h1>
     <p>This is for deep linking validation only.</p>
     <p>
       If nothing happens,
-      <a href="lechateaublanc://open" style="color:blue; text-decoration:underline;">
-        click here to open the app
-      </a>.
+      <a href="lechateaublanc://open" style="color: blue; text-decoration: underline;">click here to open the app</a>.
     </p>
   </body>
 </html>
