@@ -30,13 +30,13 @@
                 android:name="io.flutter.embedding.android.NormalTheme"
                 android:resource="@style/NormalTheme" />
 
-            <!-- App Launcher -->
+            <!-- Default launcher -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <!-- 🌐 GitHub Pages Deep Linking -->
+            <!-- 🌐 Web-based deep linking -->
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -44,16 +44,16 @@
                 <data
                     android:scheme="https"
                     android:host="toastht.github.io"
-                    android:pathPrefix="/lechateaublanc/open" />
+                    android:pathPrefix="/lechateaublanc" />
             </intent-filter>
 
-         
+            <!-- 📱 App-based scheme linking -->
             <intent-filter android:autoVerify="true">
-    <action android:name="android.intent.action.VIEW" />
-    <category android:name="android.intent.category.DEFAULT" />
-    <category android:name="android.intent.category.BROWSABLE" />
-    <data android:scheme="lechateaublanc" android:host="open" />
-</intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="lechateaublanc" android:host="open" />
+            </intent-filter>
 
         </activity>
 
@@ -63,14 +63,14 @@
             android:value="2" />
     </application>
 
-    <!-- Queries for external apps -->
+    <!-- Optional: Query for external text processors -->
     <queries>
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT" />
             <data android:mimeType="text/plain" />
         </intent>
 
-        <!-- Query for GCash app -->
+        <!-- Optional: Remove if GCash not needed -->
         <package android:name="com.globe.gcash.android" />
     </queries>
 
