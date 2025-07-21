@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Welcome to LeChateauBlanc!</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      window.onload = function () {
-        // Try to open the app
-        window.location = "lechateaublanc://open";
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Launching App...</title>
+  <script>
+    window.onload = function () {
+      // Try to open the app via deep link
+      window.location.href = "lechateaublanc://open";
 
-        // Fallback (optional) after 2s
-        setTimeout(function () {
-          window.location.href = "https://play.google.com/store/apps/details?id=com.lechateaublanc.app";
-        }, 2000);
-      };
-    </script>
-  </head>
-  <body>
-    <h2>Welcome to LeChateauBlanc!</h2>
-    <p>This is for deep linking validation only.</p>
-    <p>If nothing happens, <a href="lechateaublanc://open">click here to open the app</a>.</p>
-  </body>
+      // Fallback to Play Store or info page if app not installed
+      setTimeout(function () {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.lechateaublanc.app";
+      }, 2000);
+    };
+  </script>
+</head>
+<body>
+  <h2>Launching LeChateauBlanc...</h2>
+  <p>If nothing happens, <a href="lechateaublanc://open">click here to open the app</a>.</p>
+</body>
 </html>
