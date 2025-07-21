@@ -30,13 +30,13 @@
                 android:name="io.flutter.embedding.android.NormalTheme"
                 android:resource="@style/NormalTheme" />
 
-            <!-- Default launcher -->
+            <!-- App Launcher -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <!-- 🌐 Web-based deep linking -->
+            <!-- 🌐 Web URL Deep Link (GitHub Pages) -->
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -47,12 +47,14 @@
                     android:pathPrefix="/lechateaublanc" />
             </intent-filter>
 
-            <!-- 📱 App-based scheme linking -->
-            <intent-filter android:autoVerify="true">
+            <!-- 📱 Custom Scheme Deep Link (lechateaublanc://) -->
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="lechateaublanc" android:host="open" />
+                <data
+                    android:scheme="lechateaublanc"
+                    android:host="open" />
             </intent-filter>
 
         </activity>
@@ -63,14 +65,14 @@
             android:value="2" />
     </application>
 
-    <!-- Optional: Query for external text processors -->
+    <!-- Queries for external apps -->
     <queries>
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT" />
             <data android:mimeType="text/plain" />
         </intent>
 
-        <!-- Optional: Remove if GCash not needed -->
+        <!-- Optional: Query for GCash app -->
         <package android:name="com.globe.gcash.android" />
     </queries>
 
