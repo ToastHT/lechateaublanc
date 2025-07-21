@@ -14,7 +14,7 @@
         <!-- Google Maps API Key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBlTGmuZwZA840P5ALcJH3Q7uYIBtIZmbU"/>
+            android:value="AIzaSyBlTGmuZwZA840P5ALcJH3Q7uYIBtIZmbU" />
 
         <activity
             android:name=".MainActivity"
@@ -30,18 +30,31 @@
                 android:name="io.flutter.embedding.android.NormalTheme"
                 android:resource="@style/NormalTheme" />
 
+            <!-- App Launcher -->
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <!-- GCash deep linking -->
+            <!-- 🌐 GitHub Pages Deep Linking -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="https"
+                    android:host="toastht.github.io"
+                    android:pathPrefix="/lechateaublanc/open" />
+            </intent-filter>
+
+         
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="gcash" />
             </intent-filter>
+
         </activity>
 
         <!-- Flutter embedding version -->
@@ -53,9 +66,10 @@
     <!-- Queries for external apps -->
     <queries>
         <intent>
-            <action android:name="android.intent.action.PROCESS_TEXT"/>
-            <data android:mimeType="text/plain"/>
+            <action android:name="android.intent.action.PROCESS_TEXT" />
+            <data android:mimeType="text/plain" />
         </intent>
+
         <!-- Query for GCash app -->
         <package android:name="com.globe.gcash.android" />
     </queries>
